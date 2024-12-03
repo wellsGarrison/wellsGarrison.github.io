@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>final_submission</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>index</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7703,7 +7703,7 @@ H: Additional (not listed above) -->
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7713,79 +7713,6 @@ H: Additional (not listed above) -->
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">past_elections</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'1976-2020-president.csv'</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[3], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> past_elections = pd.read_csv('1976-2020-president.csv')
-
-File <span class="ansi-green-fg">~/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py:1026</span>, in <span class="ansi-cyan-fg">read_csv</span><span class="ansi-blue-fg">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1013</span> kwds_defaults = _refine_defaults_read(
-<span class="ansi-green-intense-fg ansi-bold">   1014</span>     dialect,
-<span class="ansi-green-intense-fg ansi-bold">   1015</span>     delimiter,
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1022</span>     dtype_backend=dtype_backend,
-<span class="ansi-green-intense-fg ansi-bold">   1023</span> )
-<span class="ansi-green-intense-fg ansi-bold">   1024</span> kwds.update(kwds_defaults)
-<span class="ansi-green-fg">-&gt; 1026</span> return _read(filepath_or_buffer, kwds)
-
-File <span class="ansi-green-fg">~/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py:620</span>, in <span class="ansi-cyan-fg">_read</span><span class="ansi-blue-fg">(filepath_or_buffer, kwds)</span>
-<span class="ansi-green-intense-fg ansi-bold">    617</span> _validate_names(kwds.get("names", None))
-<span class="ansi-green-intense-fg ansi-bold">    619</span> # Create the parser.
-<span class="ansi-green-fg">--&gt; 620</span> parser = TextFileReader(filepath_or_buffer, **kwds)
-<span class="ansi-green-intense-fg ansi-bold">    622</span> if chunksize or iterator:
-<span class="ansi-green-intense-fg ansi-bold">    623</span>     return parser
-
-File <span class="ansi-green-fg">~/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py:1620</span>, in <span class="ansi-cyan-fg">TextFileReader.__init__</span><span class="ansi-blue-fg">(self, f, engine, **kwds)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1617</span>     self.options["has_index_names"] = kwds["has_index_names"]
-<span class="ansi-green-intense-fg ansi-bold">   1619</span> self.handles: IOHandles | None = None
-<span class="ansi-green-fg">-&gt; 1620</span> self._engine = self._make_engine(f, self.engine)
-
-File <span class="ansi-green-fg">~/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py:1880</span>, in <span class="ansi-cyan-fg">TextFileReader._make_engine</span><span class="ansi-blue-fg">(self, f, engine)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1878</span>     if "b" not in mode:
-<span class="ansi-green-intense-fg ansi-bold">   1879</span>         mode += "b"
-<span class="ansi-green-fg">-&gt; 1880</span> self.handles = get_handle(
-<span class="ansi-green-intense-fg ansi-bold">   1881</span>     f,
-<span class="ansi-green-intense-fg ansi-bold">   1882</span>     mode,
-<span class="ansi-green-intense-fg ansi-bold">   1883</span>     encoding=self.options.get("encoding", None),
-<span class="ansi-green-intense-fg ansi-bold">   1884</span>     compression=self.options.get("compression", None),
-<span class="ansi-green-intense-fg ansi-bold">   1885</span>     memory_map=self.options.get("memory_map", False),
-<span class="ansi-green-intense-fg ansi-bold">   1886</span>     is_text=is_text,
-<span class="ansi-green-intense-fg ansi-bold">   1887</span>     errors=self.options.get("encoding_errors", "strict"),
-<span class="ansi-green-intense-fg ansi-bold">   1888</span>     storage_options=self.options.get("storage_options", None),
-<span class="ansi-green-intense-fg ansi-bold">   1889</span> )
-<span class="ansi-green-intense-fg ansi-bold">   1890</span> assert self.handles is not None
-<span class="ansi-green-intense-fg ansi-bold">   1891</span> f = self.handles.handle
-
-File <span class="ansi-green-fg">~/Library/Python/3.9/lib/python/site-packages/pandas/io/common.py:873</span>, in <span class="ansi-cyan-fg">get_handle</span><span class="ansi-blue-fg">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="ansi-green-intense-fg ansi-bold">    868</span> elif isinstance(handle, str):
-<span class="ansi-green-intense-fg ansi-bold">    869</span>     # Check whether the filename is to be opened in binary mode.
-<span class="ansi-green-intense-fg ansi-bold">    870</span>     # Binary mode does not support 'encoding' and 'newline'.
-<span class="ansi-green-intense-fg ansi-bold">    871</span>     if ioargs.encoding and "b" not in ioargs.mode:
-<span class="ansi-green-intense-fg ansi-bold">    872</span>         # Encoding
-<span class="ansi-green-fg">--&gt; 873</span>         handle = open(
-<span class="ansi-green-intense-fg ansi-bold">    874</span>             handle,
-<span class="ansi-green-intense-fg ansi-bold">    875</span>             ioargs.mode,
-<span class="ansi-green-intense-fg ansi-bold">    876</span>             encoding=ioargs.encoding,
-<span class="ansi-green-intense-fg ansi-bold">    877</span>             errors=errors,
-<span class="ansi-green-intense-fg ansi-bold">    878</span>             newline="",
-<span class="ansi-green-intense-fg ansi-bold">    879</span>         )
-<span class="ansi-green-intense-fg ansi-bold">    880</span>     else:
-<span class="ansi-green-intense-fg ansi-bold">    881</span>         # Binary mode
-<span class="ansi-green-intense-fg ansi-bold">    882</span>         handle = open(handle, ioargs.mode)
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: '1976-2020-president.csv'</pre>
 </div>
 </div>
 </div>
